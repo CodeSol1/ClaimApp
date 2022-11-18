@@ -1,0 +1,35 @@
+.main_containt{
+    height: 400px;
+    background-color: red;
+    background-image: url(/assets/images/banner2.png); 
+}
+
+
+
+
+
+.doctorname{
+    background-color: rgb(224, 224, 232);
+}
+
+.photo{
+    /* background-color: rgb(181, 172, 172); */
+    height:300px;
+    width:30%;
+    position:relative;
+    /* border: 1px solid orange; */
+}
+.photo2{
+    position:absolute;
+    /* left:20px; */
+    /* background-color: #fff; */
+    /* border:1px solid red; */
+    width:70%;
+}
+.photo3{
+   
+height: 200px;
+    width: 100px;
+    /* border: 1px solid rgb(76, 44, 157); */
+
+}

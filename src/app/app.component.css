@@ -1,0 +1,15 @@
+.navbar{
+    justify-content: space-between;
+    
+   
+}
+
+span{
+    padding-right:1rem;
+    
+}
+a{ 
+    color:#fff;
+    text-decoration:none;
+    margin-right:  30px;
+}

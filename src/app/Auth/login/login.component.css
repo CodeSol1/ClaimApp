@@ -1,0 +1,31 @@
+.login {
+    height: 500px;
+    background-color: rgb(80, 203, 199);
+    position: relative;
+}
+
+.login1 {
+    width: 25%;
+    border: 1px solid red;
+    border-radius: 10px;
+    position: absolute;
+    top: 3rem;
+    left: 30rem;
+    background-color: rgb(138, 130, 130);
+}
+
+.login2-1 {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+
+.login2-2 {
+    margin-left: 30px;
+}
+
+.btnlogin{
+    
+    margin-bottom: 10px;
+}
+

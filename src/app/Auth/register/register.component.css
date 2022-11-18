@@ -1,0 +1,33 @@
+.register{
+    height: 500px;
+    background-color: rgb(80, 203, 199);
+    position : relative;
+}
+
+.register1{
+width: 25%;
+border-bottom: 5px solid rgb(209, 120, 61);
+border-right: 5px solid rgb(185, 120, 28);
+ position : absolute;  
+top: 2rem; 
+ left:30rem; 
+/* margin: auto ; */
+
+background-color: rgb(224, 212, 212);
+border-radius:10px
+}
+
+.register2-1{
+    text-align: center;
+    margin-top:10px;
+    color:white;
+}
+
+.register2-2{
+    margin :20px 20px;
+}
+
+.requere{
+    color:red;
+    text-align:right;
+}
