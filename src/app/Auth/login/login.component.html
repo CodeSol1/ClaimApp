@@ -7,49 +7,64 @@
         <div class="login2-2">
 
 
-            <form>
-                <div class="example-container">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Enter your email</mat-label>
-                        <input matInput placeholder="pat@example.com" [formControl]="email" required>
-                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-                    </mat-form-field>
-
-                    <!-- <mat-form-field appearance="fill" >
-                        <mat-label>Password</mat-label>
-                        <input matInput placeholder="password" [formControl]="password" required>
-
-                    </mat-form-field>   -->
+            <form [formGroup]="LoginForm" (ngSubmit)="LoginUser()">
 
 
-                     <mat-form-field appearance="fill">
-                        <mat-label>Enter your password    </mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'">
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                            <!-- <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
-                        </button>
-                    </mat-form-field> 
+                <div class="mb-3 mt-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
+                        formControlName="Email">
 
-
-                   
-
-
-
-                    <div class="btnlogin">
-                        <button mat-raised-button color="primary">Login</button>
-                     
+                    <!-- validation start -->
+                    <div class="form-text text-danger"
+                        *ngIf="useremail.errors?.['required'] && (useremail.dirty || useremail.touched)">
+                        Email is Required
                     </div>
 
-
-
+                    <div class="form-text text-danger"
+                        *ngIf="useremail.errors?.['email'] && (useremail.dirty || useremail.touched)">
+                        Email is Invalid
+                    </div>
+                    <!-- end -->
 
                 </div>
 
-            </form>
 
 
-        </div>
+
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+                        formControlName="Password">
+
+                    <!-- validation start -->
+                    <div class="form-text text-danger"
+                        *ngIf="userpass.errors?.['required'] && (userpass.dirty || userpass.touched)">
+                        password is Required
+                    </div>
+
+                    <div class="form-text text-danger"
+                        *ngIf="userpass.errors?.['minlength'] || userpass.errors?.['maxlength']  && (userpass.dirty || userpass.touched)">
+                        password must be at least 6 and max 15 characters.
+                    </div>
+                    <!-- end -->
+
+                </div>
+        
+
+        <button [disabled]="LoginForm.invalid" type="submit" class="btn btn-primary ">Login</button> 
+
+        
+
+
+
+
+
+        </form>
+
 
     </div>
+
+
 
 </div>

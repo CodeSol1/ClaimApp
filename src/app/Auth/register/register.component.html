@@ -1,9 +1,20 @@
+
+
+
+
+
+
 <div class="register">
+
+    
+
     <div class="register1">
         <div class="register2-1">
-            <h2>Register Here</h2>
+            <h1>Register Here</h1>
             <hr>
         </div>
+        <p class="text-center fs-5 sinerr" [ngClass]="isaccountcreated ? 'text-success pb-1' : 'text-danger pb-1'">
+            {{displayMsg}} </p>
         <div class="register2-2">
 
             <form [formGroup]="SignupForm" (ngSubmit)="SignUpUser(SignupForm)">
@@ -53,7 +64,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="pwd" class="form-label">Repassword:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password again" name="pswd"
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password again" name="rpswd"
                         formControlName="RePassword">
 
                     <div class="form-text text-danger"
@@ -61,10 +72,15 @@
                         Repassword is Required
                     </div>
 
-                    <div class="form-text text-danger"
+
+                    <div class ="form-text text-danger" [ngStyle]="{'display' : repeatpass}">
+                            Repeat password not matched!
+                    </div>
+
+                    <!-- <div class="form-text text-danger"
                         *ngIf="reuserpass.errors?.['minlength'] || reuserpass.errors?.['maxlength']  && (reuserpass.dirty || reuserpass.touched)">
                         password must be at least 6 and max 15 characters.
-                    </div>
+                    </div> -->
                     <!-- end -->
 
 

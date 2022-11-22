@@ -1,16 +1,19 @@
 .register{
     height: 500px;
-    background-color: rgb(80, 203, 199);
+   
     position : relative;
+    background-image: url(/assets/images/img3.webp);
+    
+
 }
 
 .register1{
-width: 25%;
+width: 35%;
 border-bottom: 5px solid rgb(209, 120, 61);
 border-right: 5px solid rgb(185, 120, 28);
  position : absolute;  
-top: 2rem; 
- left:30rem; 
+top: 3rem; 
+ left:26rem; 
 /* margin: auto ; */
 
 background-color: rgb(224, 212, 212);
@@ -20,7 +23,9 @@ border-radius:10px
 .register2-1{
     text-align: center;
     margin-top:10px;
-    color:white;
+    color:rgb(245, 101, 23);
+    /* background-color: red; */
+    
 }
 
 .register2-2{
@@ -30,4 +35,10 @@ border-radius:10px
 .requere{
     color:red;
     text-align:right;
+}
+
+.sinerr
+{
+  /* margin-bottom: 10px; */
+  font-size: 2px;
 }

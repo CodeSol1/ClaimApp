@@ -2,26 +2,32 @@
     height: 500px;
     background-color: rgb(80, 203, 199);
     position: relative;
+    background-image: url(/assets/images/img5.webp);
 }
 
 .login1 {
-    width: 25%;
-    border: 1px solid red;
-    border-radius: 10px;
+width: 35%;
+    border-bottom: 5px solid rgb(209, 120, 61);
+    border-right: 5px solid rgb(185, 120, 28);
     position: absolute;
     top: 3rem;
-    left: 30rem;
-    background-color: rgb(138, 130, 130);
+    left: 26rem;
+    /* margin: auto ; */
+
+    background-color: rgb(224, 212, 212);
+    border-radius: 10px
 }
+
 
 .login2-1 {
     text-align: center;
     margin-top: 10px;
-    color: white;
+   
+    color: rgb(245, 101, 23);
 }
 
 .login2-2 {
-    margin-left: 30px;
+    margin: 20px 20px;
 }
 
 .btnlogin{
