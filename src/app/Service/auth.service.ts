@@ -1,24 +1,43 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { User } from 'src/app/models/user'
-import { catchError, throwError } from 'rxjs';
+import { Login } from 'src/app/models/user'
+import { Claim } from '../models/user'
+
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
   constructor(private _http: HttpClient) { }
-  url = "https://localhost:44306/api/User/CreateUser";
+  url1 = "https://localhost:44306/api/user/CreateUser";
 
-  registeruser(user: any) {
- 
-    return this._http.post(this.url, user, {
+  url2 = "https://localhost:44306/api/user/LoginUser";
+  url3 = "https://localhost:44398/api/claim/AddClaim";
+
+  registeruser(users: User) {
+
+    return this._http.post(this.url1, users, {
       responseType: 'text',
     });
   }
 
-  
-  
+  GetUser() {
+    return this._http.get<any[]>("https://localhost:44306/api/user")
+  }
+
+  loginUser(login: Login) {
+    return this._http.post(this.url2, login)
+  }
+
+  CreateClaim(claim: Claim) {
+
+    return this._http.post(this.url3, claim)
+  }
+
+
 }
 
 

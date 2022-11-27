@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/Service/auth.service';
 import { User } from 'src/app/models/user'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,14 +11,17 @@ import { User } from 'src/app/models/user'
 
 })
 export class RegisterComponent implements OnInit {
+
+  
   repeatpass: string = 'none';
 
   isaccountcreated: boolean = false;
   displayMsg: string = "";
 
-  constructor(private authsrvice: AuthService) { }
+  constructor(private authsrvice: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    
   }
 
   // reactive form settings
@@ -37,63 +41,59 @@ export class RegisterComponent implements OnInit {
 
 
   SignUpUser(SignupForm: any) {
-    if (this.userpass.value == this.reuserpass.value)
-    {
-      console.log("submitted")
+    let user = new User();
+    user.Email = SignupForm.controls.Email.value;
+    user.Password = SignupForm.controls.Password.value;
+    user.RePassword = SignupForm.controls.RePassword.value;
 
-    
-     this.authsrvice.registeruser(this.SignupForm.value).subscribe((res) => {
-       console.log(res)
-       
-       if (res == "Submit")
-       {
-         this.displayMsg = "Account created Successfully!";
-         this.isaccountcreated = true;
-       }
-       else if (res = 'AlreadyExist')
-       {
-         this.displayMsg = "Account already exist!";
-         this.isaccountcreated = false;
-       }
-       
-       else { 
-         this.displayMsg = "something went wrong";
-         this.isaccountcreated = false;
-       }
-       
+    if (user.Password == user.RePassword) {
+      // console.log("submitted")
+      console.log(user)
+      this.authsrvice.registeruser(user).subscribe((res) => {
+        console.log(res)
 
-     })
-      
-      
-      
-      
-    } else {
+        this.displayMsg = "Account created Successfully!";
+        this.isaccountcreated = true;
+        // this.router.navigateByUrl("login")
+      },
+        error => {
+          console.log(error);
+          console.log(error.status);
+          if (error.status == 400) {
+            this.displayMsg = "Account already exist!";
+            this.isaccountcreated = false;
+
+          }}
+)
+
+    }
+    else {
       this.repeatpass = 'inline';
     }
-    
-}
+
+  }
 
 
-  
-  
-  
-  
+
+
+
+
 
   // for handling validation
 
   get useremail(): FormControl {
-      return this.SignupForm.get('Email') as FormControl;
-    }
+    return this.SignupForm.get('Email') as FormControl;
+  }
 
   get userpass(): FormControl {
-      return this.SignupForm.get('Password') as FormControl;
-    }
-  get reuserpass(): FormControl {
-      return this.SignupForm.get('RePassword') as FormControl;
-    }
-
-
+    return this.SignupForm.get('Password') as FormControl;
   }
+  get reuserpass(): FormControl {
+    return this.SignupForm.get('RePassword') as FormControl;
+  }
+
+
+}
 
 
 

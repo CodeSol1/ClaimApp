@@ -1,0 +1,65 @@
+.claim {
+    height: 500px;
+
+    position: relative;
+    /* background-image: url(/assets/images/img3.webp); */
+    background-color: rgb(194, 139, 139);
+
+
+}
+
+.claim1 {
+    width: 50%;
+    /* border-bottom: 5px solid rgb(209, 120, 61); */
+    /* border-right: 5px solid rgb(185, 120, 28); */
+    position: absolute;
+    top: 1rem;
+    /* left: 25rem; */
+   
+
+    background-color: white;
+   
+}
+
+.claim2-1 {
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(245, 101, 23);
+    /* background-color: red; */
+
+}
+
+.claim2-2 {
+    margin: 20px 20px;
+}
+
+
+.cliambutt{
+    width:50%;
+    margin-left: 10rem;
+}
+
+.claimid{
+    background-color: rgb(138, 26, 26);
+   
+}
+
+.claimsidebar{
+   height: 200px;
+    /* background-color:red; */
+
+    /* position: absolute; */
+         margin-top: 1rem;
+         margin-left: 4rem;  
+}
+
+.claimsidebar1{ 
+    /* background-color: rgb(0, 13, 255); */
+    height: 200px;
+    width: 240px;
+    margin-left: 90px;
+    margin-top: 40px;
+    color:white;
+    
+   
+}

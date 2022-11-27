@@ -1,9 +1,5 @@
 
 
-
-
-
-
 <div class="register">
 
     
@@ -18,9 +14,6 @@
         <div class="register2-2">
 
             <form [formGroup]="SignupForm" (ngSubmit)="SignUpUser(SignupForm)">
-
-
-
 
                 <div class="mb-3 mt-3">
                     <label for="email" class="form-label">Email:</label>
@@ -77,25 +70,10 @@
                             Repeat password not matched!
                     </div>
 
-                    <!-- <div class="form-text text-danger"
-                        *ngIf="reuserpass.errors?.['minlength'] || reuserpass.errors?.['maxlength']  && (reuserpass.dirty || reuserpass.touched)">
-                        password must be at least 6 and max 15 characters.
-                    </div> -->
-                    <!-- end -->
-
-
-
-
+               
                 </div>
 
-                <button [disabled]="SignupForm.invalid" type="submit" class="btn btn-primary">SignUp</button> -
-
-
-
-
-
-
-
+                <button [disabled]="SignupForm.invalid" type="submit" class="btn btn-primary">SignUp</button> 
 
             </form>
 
@@ -104,3 +82,4 @@
     </div>
 
 </div>
+

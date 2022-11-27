@@ -3,11 +3,13 @@
         <div class="login2-1">
             <h2>Login Here</h2>
             <hr>
+
+         
         </div>
         <div class="login2-2">
 
 
-            <form [formGroup]="LoginForm" (ngSubmit)="LoginUser()">
+            <form [formGroup]="LoginForm" (ngSubmit)="LoginSubmitted(LoginForm)">
 
 
                 <div class="mb-3 mt-3">
@@ -50,21 +52,21 @@
                     <!-- end -->
 
                 </div>
-        
 
-        <button [disabled]="LoginForm.invalid" type="submit" class="btn btn-primary ">Login</button> 
 
-        
+                <button [disabled]="LoginForm.invalid" type="submit" class="btn btn-primary ">Login</button>
 
 
 
 
 
-        </form>
+
+
+            </form>
+
+
+        </div>
+
 
 
     </div>
-
-
-
-</div>

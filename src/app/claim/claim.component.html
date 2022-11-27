@@ -1,0 +1,85 @@
+<div class="claim">
+
+    <div class="row">
+        <div class="col-4">
+            <div class="claimsidebar">
+                <div class="claimsidebar1">
+                    <h3>userid : 12343</h3>
+                    <h3>policyid:1242</h3>
+                    <h3>policy Name : xyz</h3>
+                    <h3>policy holder name : Amit kumar </h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+
+
+            <div class="claim1">
+                <div class="claim2-1">
+                    <h1>Claim Form</h1>
+                    <hr>
+                </div>
+
+
+
+                <form [formGroup]="ClaimForm" (ngSubmit)="ClaimSubmitted(ClaimForm)">
+                    <div class="mx-4 mb-3">
+
+
+                        <div class="row">
+                            <div class="col">
+                                <label for="amount">Amount:</label>
+                                <input type="number" class="form-control" placeholder="Enter Amount" name="Amount"
+                                    formControlName="Amount">
+                            </div>
+
+                            <!-- validation start -->
+                            <div class="form-text text-danger"
+                                *ngIf="amount.errors?.['required'] && (amount.dirty || amount.touched)">
+                                Amount is Required
+                            </div>
+
+                            <div class="form-text text-danger"
+                                *ngIf="amount.errors?.['min'] ||amount.errors?.['max']  && (amount.dirty || amount.touched)">
+                                Amount should be 1000-500000.
+                            </div>
+                            <!-- end -->
+
+
+                            <div class="col">
+                                <label for="hospital">Hospital:</label>
+                                <input type="text" class="form-control" placeholder="Enter Hospital Name With City"
+                                    name="hospital" formControlName="Hospital">
+                            </div>
+
+                            <div class="form-text text-danger"
+                                *ngIf="hospital.errors?.['required'] && (hospital.dirty || hospital.touched)">
+                                Hospital is Required
+                            </div>
+
+
+                        </div>
+
+                        <div class="pt-3">
+                            <label for="comment">Description:</label>
+                            <textarea class="form-control" rows="5" id="comment" name="text"
+                                formControlName="Description">
+
+                            </textarea>
+
+                        </div>
+
+                        <div class="pt-3 ">
+                            <button type="submit" class="btn btn-primary cliambutt">Submit</button>
+
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
