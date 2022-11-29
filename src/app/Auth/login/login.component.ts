@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { JsonPipe } from '@angular/common';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
@@ -14,8 +14,8 @@ import { AuthService } from 'src/app/Service/auth.service';
 
 
 export class LoginComponent implements OnInit {
- 
-  constructor(private authService: AuthService,private router: Router) { }
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -32,50 +32,41 @@ export class LoginComponent implements OnInit {
 
   isuservalid: boolean = false;
   LoginSubmitted(LoginForm: any) {
-    // console.log(this.LoginForm)
-  
-    let obj: object;
     
-    let loginuser= new Login();
-    loginuser.Email = LoginForm.controls.Email.value;
-    loginuser.Password = LoginForm.controls.Password.value;
+    let user = new Login();
+    user.Email = LoginForm.controls.Email.value;
+    user.Password = LoginForm.controls.Password.value;
 
-    // this.authService.loginUser(this.LoginForm.value).subscribe(res => {
-    //   obj = res;
+    this.authService.loginUser(user)
+      .subscribe(obj => {
+        console.log(obj)
+        console.log(Object.values(obj)[4]);
+        if (Object.values(obj)[4] == 2)
+          this.router.navigate(["claim"]);
+        if (Object.values(obj)[4] == 1)
+          this.router.navigate([""]);
 
-    //   console.log(res);
 
-    this.authService.loginUser(loginuser)
-        .pipe(map(response => ({
-          Email: response[],
-          Role: response,
+      },
+        error => {
+      console.log(error);
+      if (error.status == 400) {
+
+        alert("SOme error occured!")
+      }
+      else if (error.status == 404) {
+
+        alert("Email Or Password Invalid!")
+      }
+    } )
         
-        })))
-        .subscribe(luke => console.log(luke))
-
-
-
-
-        // this.isuservalid = true;
-        // alert("Login Successful")
-        // this.router.navigateByUrl("")
-
-    // },
-    //   error => {
-    //     console.log(error);
-    //     if (error.status == 400) {
-         
-    //       alert("SOme error occured!")
-    //     }
-    //     else if (error.status == 404)
-    //     {
-         
-    //       alert("Email Or Password Invalid!")
-    //     }
-    //   }
+      
     
-    // );
 
+
+    
+
+    
 
   }
 

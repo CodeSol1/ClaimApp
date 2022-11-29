@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { User } from 'src/app/models/user'
-import { Login } from 'src/app/models/user'
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+
+import { Login, User } from 'src/app/models/user'
 import { Claim } from '../models/user'
+import { map } from 'rxjs';
+
+
 
 
 
@@ -17,6 +20,8 @@ export class AuthService {
   url2 = "https://localhost:44306/api/user/LoginUser";
   url3 = "https://localhost:44398/api/claim/AddClaim";
 
+  
+
   registeruser(users: User) {
 
     return this._http.post(this.url1, users, {
@@ -29,13 +34,46 @@ export class AuthService {
   }
 
   loginUser(login: Login) {
-    return this._http.post(this.url2, login)
+    return this._http.post(this.url2 , login)
   }
 
   CreateClaim(claim: Claim) {
 
     return this._http.post(this.url3, claim)
   }
+
+
+  setBearerToken(token: any) {
+    // this method should store the authentication token to local storage
+    localStorage.setItem("bearerToken", token);
+  }
+
+  getBearerToken() {
+    // this method should return the authentication token stored in local storage
+    return localStorage.getItem("bearerToken")
+  }
+
+  removeBearerToken() {
+    // this method should clear the token stored in local storage
+    localStorage.removeItem("bearerToken")
+  }
+
+
+  isUserAuthenticated(token: string): boolean {
+    // this method should validate authenticity of a user - accepts the token string 
+    // and returns Promise of authenticated status of user with boolean value
+
+    if (this.getBearerToken() != null) {
+      return true;
+    }
+    else {
+      return false;
+    }
+
+  }
+  
+
+  
 
 
 }

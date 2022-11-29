@@ -1,15 +1,15 @@
 .main_containt{
     
     /* min-height: 100%; */
-        height: 500px;
+        /* height: 400px; */
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
         
-        background-color: rgb(48, 19, 90);
+        /* background-color: rgb(48, 19, 90); */
    
    
-      background-image: url(/assets/images/i2.png);   
+      /* background-image: url(/assets/images/i2.png);    */
      
 }
 

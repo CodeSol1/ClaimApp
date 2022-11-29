@@ -1,0 +1,67 @@
+
+<div class="addpol">
+
+
+    <div class="row">
+        <div class="col-4">
+           
+bfgcgbgb
+        </div>
+        <div class="col-4">
+           
+            ffvjdsfkvxgb
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container my-5">
+    <h1 class="mb-3">ADD POLICY</h1>
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="addPolicy(form.value)">
+
+                <div class="mb-3">
+                    <label for="policyName" class="form-label">Policy Name</label>
+                    <input type="text" class="form-control" id="policyName" name="policyName"
+                        [(ngModel)]="addPolicyRequest.policyName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="insuranceTye" class="form-label">InsuranceType</label>
+                    <input type="text" class="form-control" id="insuranceTye" name="insuranceTye"
+                        [(ngModel)]="addPolicyRequest.insuranceTye">
+                </div>
+
+                <div class="mb-3">
+                    <label for="ageLimit" class="form-label">AgeLimit</label>
+                    <input type="text" class="form-control" id="ageLimit" name="ageLimit"
+                        [(ngModel)]="addPolicyRequest.ageLimit">
+                </div>
+
+                <div class="mb-3">
+                    <label for="premiumAmount" class="form-label">Premium Amount</label>
+                    <input type="number" class="form-control" id="premiumAmount" name="premiumAmount"
+                        [(ngModel)]="addPolicyRequest.premiumAmount">
+                </div>
+
+                <div class="mb-3">
+                    <label for="duration" class="form-label">Duration(Years)</label>
+                    <input type="number" class="form-control" id="duration" name="duration"
+                        [(ngModel)]="addPolicyRequest.duration">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="coverAmount" class="form-label">Cover Amount</label>
+                    <input type="number" class="form-control" id="coverAmount" name="coverAmount"
+                        [(ngModel)]="addPolicyRequest.coverAmount">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+
+</div>
