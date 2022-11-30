@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
     ])
 
   })
-
+ loggeduser : string=''
   isuservalid: boolean = false;
   LoginSubmitted(LoginForm: any) {
-    
+
     let user = new Login();
     user.Email = LoginForm.controls.Email.value;
     user.Password = LoginForm.controls.Password.value;
@@ -40,33 +40,36 @@ export class LoginComponent implements OnInit {
     this.authService.loginUser(user)
       .subscribe(obj => {
         console.log(obj)
-        console.log(Object.values(obj)[4]);
-        if (Object.values(obj)[4] == 2)
-          this.router.navigate(["claim"]);
-        if (Object.values(obj)[4] == 1)
+        console.log(Object.values(obj)[0]);
+       
+        this.authService.setBearcerToken(Object.values(obj)[3]);
+        // this.authService.checkRole(Object.values(obj)[0]);
+        if (Object.values(obj)[0] == 2)
+          this.router.navigate(["admindashboard"]);
+        if (Object.values(obj)[0] == 1)
           this.router.navigate([""]);
 
 
       },
         error => {
-      console.log(error);
-      if (error.status == 400) {
+          console.log(error);
+          if (error.status == 400) {
 
-        alert("SOme error occured!")
-      }
-      else if (error.status == 404) {
+            alert("SOme error occured!")
+          }
+          else if (error.status == 404) {
 
-        alert("Email Or Password Invalid!")
-      }
-    } )
-        
-      
-    
+            alert("Email Or Password Invalid!")
+          }
+        })
 
 
-    
 
-    
+
+
+
+
+
 
   }
 

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavbarComponent } from './navbar.component';
+import { RemovepolicyComponent } from './removepolicy.component';
 
-describe('NavbarComponent', () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
+describe('RemovepolicyComponent', () => {
+  let component: RemovepolicyComponent;
+  let fixture: ComponentFixture<RemovepolicyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
+      declarations: [ RemovepolicyComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NavbarComponent);
+    fixture = TestBed.createComponent(RemovepolicyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

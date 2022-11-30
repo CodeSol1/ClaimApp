@@ -1,0 +1,24 @@
+
+.main{
+    height: 600px;
+    
+    position: relative;
+}
+.addpol{
+    width:50%;
+    position: absolute;
+        left: 20rem;
+        top: 50px;
+    height: 500px;
+    background-color: rgb(95, 101, 35);
+}
+
+.addpol2{
+    justify-content:center;
+    
+}
+
+.polhead{
+    text-align:center;
+    color:white
+}

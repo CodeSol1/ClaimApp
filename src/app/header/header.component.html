@@ -1,0 +1,31 @@
+
+<mat-toolbar color="primary" class="navbar">
+    <div><a routerLink="">ClaimApp</a></div>
+    <div>
+        <span>
+            <a routerLink="policylist">Policy</a>
+        </span>
+        <span>
+            <a routerLink="register">Register</a>
+        </span>
+
+        <span>
+            <a routerLink="login"> login</a>
+        </span>
+
+
+        <button type="button" class="btn text-light logbott" (click)="logout()">Logout</button>
+
+        <span>
+            <a routerLink="profile"> <img src="/assets/images/profile.png" height="40px" width="40px" alt=""></a>
+        </span>
+
+
+
+
+    </div>
+
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

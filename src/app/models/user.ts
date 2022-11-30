@@ -44,6 +44,7 @@ export class Policy {
     premiumAmount: number;
     duration: number;
     coverAmount: number;
+    discription: string;
 
     /**
      *
@@ -56,6 +57,7 @@ export class Policy {
         this.premiumAmount = 0;
         this.duration = 0;
         this.coverAmount = 0;
+        this.discription = '';
     }
 }
 

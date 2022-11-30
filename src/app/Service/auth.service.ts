@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Login, User } from 'src/app/models/user'
 import { Claim } from '../models/user'
 import { map } from 'rxjs';
+import { CheckboxControlValueAccessor } from '@angular/forms';
 
 
 
@@ -20,7 +21,7 @@ export class AuthService {
   url2 = "https://localhost:44306/api/user/LoginUser";
   url3 = "https://localhost:44398/api/claim/AddClaim";
 
-  
+
 
   registeruser(users: User) {
 
@@ -34,7 +35,7 @@ export class AuthService {
   }
 
   loginUser(login: Login) {
-    return this._http.post(this.url2 , login)
+    return this._http.post(this.url2, login)
   }
 
   CreateClaim(claim: Claim) {
@@ -43,7 +44,7 @@ export class AuthService {
   }
 
 
-  setBearerToken(token: any) {
+  setBearcerToken(token: any) {
     // this method should store the authentication token to local storage
     localStorage.setItem("bearerToken", token);
   }
@@ -59,23 +60,32 @@ export class AuthService {
   }
 
 
-  isUserAuthenticated(token: string): boolean {
+  isUserAuthenticated(): boolean {
     // this method should validate authenticity of a user - accepts the token string 
     // and returns Promise of authenticated status of user with boolean value
 
+    console.log("In ser" + this.getBearerToken());
+
+    
     if (this.getBearerToken() != null) {
       return true;
     }
     else {
       return false;
     }
+  }
+    // CheckRole( role : number) : nmbert
+    // { 
+    //   return role;
+            
+    // }
 
   }
-  
-
-  
 
 
-}
+
+
+
+
 
 

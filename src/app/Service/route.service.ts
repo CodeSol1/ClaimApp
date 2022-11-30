@@ -15,8 +15,9 @@ export class RouteService {
 
   toAdminDashboard() {
     
-    this._router.navigate(["dashboard"]);
+    this._router.navigate(["admindashboard"]);
   }
+  
   toUserDashboard() {
    
     this._router.navigate([""]);

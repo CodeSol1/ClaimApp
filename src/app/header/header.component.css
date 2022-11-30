@@ -1,20 +1,21 @@
-.navbar{
+.navbar {
     justify-content: space-between;
-    
-   
+
+
 }
 
-span{
-    padding-right:1rem;
-    
-}
-a{ 
-    color:#fff;
-    text-decoration:none;
-    margin-right:  30px;
+span {
+    padding-right: 1rem;
+
 }
 
-.logbott{
+a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.logbott {
     font: size 30px;
     color: rgb(186, 38, 38);
     /* background-color: rgb(11, 0, 45); */

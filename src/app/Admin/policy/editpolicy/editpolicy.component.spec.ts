@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainComponent } from './main.component';
+import { EditpolicyComponent } from './editpolicy.component';
 
-describe('MainComponent', () => {
-  let component: MainComponent;
-  let fixture: ComponentFixture<MainComponent>;
+describe('EditpolicyComponent', () => {
+  let component: EditpolicyComponent;
+  let fixture: ComponentFixture<EditpolicyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainComponent ]
+      declarations: [ EditpolicyComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MainComponent);
+    fixture = TestBed.createComponent(EditpolicyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

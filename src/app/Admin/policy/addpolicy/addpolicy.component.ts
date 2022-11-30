@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Policy } from 'src/app/models/user';
 import { PolicyService } from 'src/app/Service/policy.service';
@@ -17,24 +18,26 @@ export class AddpolicyComponent implements OnInit {
     ageLimit: '',
     premiumAmount: 0,
     duration: 0,
-    coverAmount: 0
+    coverAmount: 0,
+    discription: '',
 
   };
   policy = new Policy();
-  constructor(private _pservice: PolicyService, private router: Router) { }
-
-  ngOnInit(): void {
-  }
   
-  addPolicy(form: Policy) {
-    this._pservice.addPolicy(this.addPolicyRequest).subscribe({
+  constructor(private policyservice: PolicyService,private router: Router) { }
+  ngOnInit(): void { }
 
+  addPolicy(form: Policy) {
+    this.policyservice.addPolicy(this.addPolicyRequest).subscribe({
+           
       next: (form) => {
-        this.router.navigate(['poli-list'])
+        alert("Policy Added")
+        this.router.navigate(['admindashboard'])
       }
     })
 
 
   }
 
+  
 }

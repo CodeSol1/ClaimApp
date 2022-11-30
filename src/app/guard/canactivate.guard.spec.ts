@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CanActivateGuard } from './can-activate.guard';
+import { CanactivateGuard } from './canactivate.guard';
 
-describe('CanActivateGuard', () => {
-  let guard: CanActivateGuard;
+describe('CanactivateGuard', () => {
+  let guard: CanactivateGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    guard = TestBed.inject(CanActivateGuard);
+    guard = TestBed.inject(CanactivateGuard);
   });
 
   it('should be created', () => {

@@ -13,31 +13,45 @@ import { MainComponent } from './main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module'
 import { ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from './admin/navbar/navbar.component';
+
 import { ClaimComponent } from './claim/claim.component';
 import { UserdetailsComponent } from './admin/userdetails/userdetails.component';
 import { PloicylistComponent } from './policy/ploicylist/ploicylist.component';
 import { PolicydetailsComponent } from './policy/policydetails/policydetails.component';
 import { PolicyService } from './Service/policy.service';
-import { AddpolicyComponent } from './policy/addpolicy/addpolicy.component';
+
 import { MyprofileComponent } from './profile/myprofile/myprofile.component';
 import { MyclaimsComponent } from './profile/myclaims/myclaims.component';
 import { MypoliciesComponent } from './profile/mypolicies/mypolicies.component';
+
+import { ApplypolicyComponent } from './policy/applypolicy/applypolicy.component';
+import { AddpolicyComponent } from './admin/policy/addpolicy/addpolicy.component';
+import { RemovepolicyComponent } from './admin/policy/removepolicy/removepolicy.component';
+import { EditpolicyComponent } from './admin/policy/editpolicy/editpolicy.component';
+import { AdminmainComponent } from './admin/adminmain/adminmain.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
     MainComponent,
-    NavbarComponent,
+   
     ClaimComponent,
     UserdetailsComponent,
     PloicylistComponent,
     PolicydetailsComponent,
-    AddpolicyComponent,
+   
     MyprofileComponent,
     MyclaimsComponent,
     MypoliciesComponent,
+    AddpolicyComponent,
+    RemovepolicyComponent,
+     EditpolicyComponent,
+     AdminmainComponent,
+     FooterComponent,
+     HeaderComponent,
    
 
 

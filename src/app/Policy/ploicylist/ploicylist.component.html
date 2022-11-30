@@ -1,49 +1,41 @@
-<div>
+
+
+
+
+<div class="container my-2 pollist">
     <div class="row">
-        <div class="col">
-            <div  class="list1" >
-                tgsddcbj
-            </div>
-        </div>
-        <div class="col">
-                <div class="list2">
-                      hfjkxvbv
+        <ng-container *ngFor="let policy of policylist" >
+            <div class="col-lg-6">
+                <div class="card mt-2 " style="width:550px ; background-color:rgb(179, 199, 199);">
+
+                   <h3 style="text-align:center;color:green"> PolicyName :{{policy.policyName}}</h3>
+                   <h4 style="text-align:center;color:green">{{policy.description}}</h4>
+
+                   <div class="row">
+                     <div class="col-6" style="padding-left: 50px;">
+                        <h4> Type : {{policy.insuranceTye}}</h4>
+                        <h4> AgeLimit : {{policy.ageLimit}}</h4>
+                     </div>
+                     <div class="col-6" >
+                        <h4> Primium : {{policy.premiumAmount}} / Month</h4>
+                        <h4> PolicyCover : {{policy.coverAmount}}</h4>
+                     </div>
+                   </div>
+
+
+                    <button type="button" class="btn btn-primary m-2"><a [routerLink]="['/PolicyList','details',policy.id]"
+                            style="color:white;text-decoration:none">View Details</a>
+                        </button>
                 </div>
-        </div>
-        
+            </div>
+
+        </ng-container>
+
     </div>
-</div>
 
-
-
-<div class="container my-5">
-    <h1 class="mb-3">PolicyList</h1>
-
-    <table class="table table-striped table-hover" *ngIf="policylist && policylist.length >0">
-        <thead>
-            <!-- <th>Id</th> -->
-            <th>PolicyName</th>
-            <th>InsuranceType</th>
-            <th>AgeLimit</th>
-            <!-- <th>Details</th> -->
-            <!-- <th></th> -->
-        </thead>
-        <tbody>
-            <tr *ngFor="let policy of policylist">
-                <!-- <td>{{policy.id}}</td> -->
-                <td>{{policy.policyName}}</td>
-                <td>{{policy.insuranceTye}}</td>
-                <td>{{policy.ageLimit}}</td>
-                <!-- <td>{{policy.details}}</td> -->
-                <!-- <td><button type="button" class="btn btn-danger m-2"><a [routerLink]="['/PolicyList','edit', policy.id]"
-                            style="color:white;text-decoration:none">Edit</a></button></td> -->
-                <td><button type="button" class="btn btn-primary m-2"><a
-                            [routerLink]="['/PolicyList','details',policy.id]"
-                            style="color:white;text-decoration:none">View</a></button></td>
-            </tr>
-
-        </tbody>
-    </table>
     <p *ngIf="!policylist || policylist.length <=0"> No Policies Added </p>
 </div>
 
+
+
+ 

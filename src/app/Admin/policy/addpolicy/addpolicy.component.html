@@ -1,0 +1,82 @@
+<div class="main">
+    <div class="addpol">
+        <div class="addpol2">
+            <div class="polhead">
+                 <h1 class="mb-3 ">ADD POLICY</h1>
+            </div>
+            <hr>
+            
+            <form #form="ngForm" (ngSubmit)="addPolicy(form.value)">
+                <div class="row pt-3 px-4">
+                    <div class="col">
+                        <div class="mb-1">
+                            <label for="policyName" class="form-label">Policy Name</label>
+                            <input type="text" class="form-control" id="policyName" name="policyName"placeholder="Policy Name"[(ngModel)]="addPolicyRequest.policyName">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-1">
+                            <label for="insuranceTye" class="form-label">InsuranceType</label>
+                            <input type="text" class="form-control" id="insuranceTye" name="insuranceTye" placeholder="Insurance-type"
+                                [(ngModel)]="addPolicyRequest.insuranceTye">
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-3 px-4">
+                    <div class="col">
+                        <div class="mb-1">
+                            <label for="ageLimit" class="form-label">AgeLimit</label>
+                            <input type="text" class="form-control" placeholder="Age Limit" id="ageLimit" name="ageLimit" [(ngModel)]="addPolicyRequest.ageLimit">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-1">
+                            <label for="premiumAmount" class="form-label">Premium Amount</label>
+                            <input type="number" class="form-control" id="premiumAmount" name="premiumAmount" placeholder="Premium Amount"
+                                [(ngModel)]="addPolicyRequest.premiumAmount">
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-3 px-4">
+                    <div class="col">
+                    <div class="mb-1">
+                        <label for="duration" class="form-label">Duration(Years)</label>
+                        <input type="number" class="form-control" id="duration" name="duration" placeholder="Duration" 
+                        [(ngModel)]="addPolicyRequest.duration">
+                    </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-1">
+                            <label for="coverAmount" class="form-label">Cover Amount</label>
+                            <input type="number" class="form-control" id="coverAmount" name="coverAmount" placeholder="Cover Amount"
+                                [(ngModel)]="addPolicyRequest.coverAmount">
+                        </div>
+                    </div>
+
+                <div class="">
+                    <label for="policyName" class="form-label">Desc</label>
+                    <input type="text" class="form-control" id="policyName" name="policyName" placeholder="description"
+                        [(ngModel)]="addPolicyRequest.discription">
+                </div>
+
+                    <button type="submit" class="btn btn-primary mt-2">Add </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,6 +5,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
+        min-height:300px;
         
         /* background-color: rgb(48, 19, 90); */
    
