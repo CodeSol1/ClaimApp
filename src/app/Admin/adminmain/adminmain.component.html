@@ -1,4 +1,48 @@
 
-<div class="addmain">
-    
+
+
+
+
+<div class="container pollist">
+    <div class="row">
+        <ng-container *ngFor="let policy of policylist" >
+            <div class="col-lg-6">
+                <div class="card mt-2 shadow " style="width:550px ; background:linear-gradient(to left ,#cfada7,#4065a4);  ">
+                    <!-- background: linear-gradient(to left, #cfada7, #4065a4);  -->
+                   
+                   <h3 style="text-align:center;color:lemonchiffon ;font-size: large;font-weight: bolder;"> PolicyName :{{policy.policyName}}</h3>
+                   <h4 style="text-align:center;color:wheat;font-size: large;font-weight: bolder;">{{policy.description}}</h4>
+
+                   <div class="row">
+                     <div class="col-6" style="padding-left: 22px;">
+                        <h4 style="font-weight: bolder;"> PolicyType : {{policy.insuranceTye}}</h4>
+                        <h4 style="font-weight: bolder;"> AgeLimit : {{policy.ageLimit}}</h4>
+                     </div>
+                     <div class="col-6" >
+                        <h4 style="font-weight: bolder;"> Premium : {{policy.premiumAmount}} / Month</h4>
+                        <h4 style="font-weight: bolder;"> PolicyCover : {{policy.coverAmount}}</h4>
+                     </div>
+                   </div>
+                  
+                   <button type="button" style="background: linear-gradient(to left, #1e3c72, #2a5298);" class="m-2"><a [routerLink]="['/PolicyList','details',policy.id]"  style="color:white;text-decoration:none">View</a></button>
+                   
+                   <button type="button" style="background: linear-gradient(to left, #e53935,#e35d5b);" class="m-2"><a [routerLink]="['/PolicyList','edit',policy.id]"  style="color:white;text-decoration:none">Edit</a></button>
+                    <!-- <button type="button" class="btn btn-primary m-2"><a [routerLink]="['/PolicyList','details',policy.id]"
+                            style="color:white;text-decoration:none">View Details</a>
+                        </button> -->
+
+                </div>
+            </div>
+
+<!-- background: linear-gradient(to left, #1e3c72, #2a5298);  -->
+
+        </ng-container>
+
+    </div>
+
+    <p *ngIf="!policylist || policylist.length <=0"> No Policies Added </p>
 </div>
+
+
+
+ 

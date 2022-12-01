@@ -19,7 +19,7 @@ export class AddpolicyComponent implements OnInit {
     premiumAmount: 0,
     duration: 0,
     coverAmount: 0,
-    discription: '',
+    description: '',
 
   };
   policy = new Policy();
@@ -31,8 +31,8 @@ export class AddpolicyComponent implements OnInit {
     this.policyservice.addPolicy(this.addPolicyRequest).subscribe({
            
       next: (form) => {
-        alert("Policy Added")
-        this.router.navigate(['admindashboard'])
+        // alert("Policy Added")
+        this.router.navigate(['admin'])
       }
     })
 

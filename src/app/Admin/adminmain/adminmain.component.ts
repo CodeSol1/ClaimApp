@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PolicyService } from 'src/app/Service/policy.service';
 
 @Component({
   selector: 'app-adminmain',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminmainComponent implements OnInit {
 
-  constructor() { }
+  policylist: any[] = [];
+  constructor(private _pservice: PolicyService) { }
 
   ngOnInit(): void {
+
+    this._pservice.getAllPolicies().subscribe({
+      next: (policylist) => {
+        this.policylist = policylist;
+      },
+      error: (response) => {
+        console.log(response);
+      }
+
+    })
   }
 
 }

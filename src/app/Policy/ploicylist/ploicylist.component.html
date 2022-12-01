@@ -2,32 +2,37 @@
 
 
 
-<div class="container my-2 pollist">
+<div class="container pollist">
     <div class="row">
         <ng-container *ngFor="let policy of policylist" >
             <div class="col-lg-6">
-                <div class="card mt-2 " style="width:550px ; background-color:rgb(179, 199, 199);">
-
-                   <h3 style="text-align:center;color:green"> PolicyName :{{policy.policyName}}</h3>
-                   <h4 style="text-align:center;color:green">{{policy.description}}</h4>
+                <div class="card mt-2 shadow " style="width:550px ; background:linear-gradient(to left ,#cfada7,#4065a4);  ">
+                    <!-- background: linear-gradient(to left, #cfada7, #4065a4);  -->
+                   
+                   <h3 style="text-align:center;color:lemonchiffon ;font-size: large;font-weight: bolder;"> PolicyName :{{policy.policyName}}</h3>
+                   <h4 style="text-align:center;color:wheat;font-size: large;font-weight: bolder;">{{policy.description}}</h4>
 
                    <div class="row">
-                     <div class="col-6" style="padding-left: 50px;">
-                        <h4> Type : {{policy.insuranceTye}}</h4>
-                        <h4> AgeLimit : {{policy.ageLimit}}</h4>
+                     <div class="col-6" style="padding-left: 22px;">
+                        <h4 style="font-weight: bolder;"> PolicyType : {{policy.insuranceTye}}</h4>
+                        <h4 style="font-weight: bolder;"> AgeLimit : {{policy.ageLimit}}</h4>
                      </div>
                      <div class="col-6" >
-                        <h4> Primium : {{policy.premiumAmount}} / Month</h4>
-                        <h4> PolicyCover : {{policy.coverAmount}}</h4>
+                        <h4 style="font-weight: bolder;"> Premium : {{policy.premiumAmount}} / Month</h4>
+                        <h4 style="font-weight: bolder;"> PolicyCover : {{policy.coverAmount}}</h4>
                      </div>
                    </div>
+                  
 
+                   <button type="button" style="background: linear-gradient(to left, #1e3c72, #2a5298);" class="m-2"><a [routerLink]="['/PolicyList','details',policy.id]"  style="color:white;text-decoration:none">View</a></button>
 
-                    <button type="button" class="btn btn-primary m-2"><a [routerLink]="['/PolicyList','details',policy.id]"
+                    <!-- <button type="button" class="btn btn-primary m-2"><a [routerLink]="['/PolicyList','details',policy.id]"
                             style="color:white;text-decoration:none">View Details</a>
-                        </button>
+                        </button> -->
                 </div>
             </div>
+
+<!-- background: linear-gradient(to left, #1e3c72, #2a5298);  -->
 
         </ng-container>
 

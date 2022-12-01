@@ -1,1 +1,51 @@
+<div class="container my-5">
+    <h1 class="mb-5" style="color:plum;">
+{{policylist.policyName}}
+    </h1>
+    <div class="row">
+      <div class="col-6">
+        <form >
+       
+  
+          <div class="mb-3">
+            <label for="premiumAmount" class="form-label" style="font-family:Georgia, 'Times New Roman', Times, serif ;font-weight:900;font-size:x-large">Policy Name</label>
+            <input type="text" class="form-control" id="premiumAmount" name="premiumAmount"
+              [(ngModel)]="policylist.policyName" [readonly]="true" style="font-size:large ; color:teal;font-weight:bolder">
+          </div>
+  
+          <div class="mb-3">
+            <label for="insuranceTye" class="form-label"style="font-family:Georgia, 'Times New Roman', Times, serif ;font-weight:900;font-size:x-large">InsuranceType</label>
+            <input type="text" class="form-control" id="insuranceTye" name="insuranceTye"
+              [(ngModel)]="policylist.insuranceTye" [readonly]="true" style="font-size:large ; color:teal;font-weight:bolder">
+          </div>
+  
+          <div class="mb-3">
+            <label for="ageLimit" class="form-label" style="font-family:Georgia, 'Times New Roman', Times, serif ;font-weight:900;font-size:x-large">AgeLimit</label>
+            <input type="text" class="form-control" id="ageLimit" name="ageLimit" [(ngModel)]="policylist.ageLimit" [readonly]="true" style="font-size:large ; color:teal;font-weight:bolder">
+          </div>
+                
+  <div class="mb-3">
+    <label for="premiumAmount" class="form-label" style="font-family:Georgia, 'Times New Roman', Times, serif ;font-weight:900;font-size:x-large">Premium Amount</label>
+    <input type="currency" class="form-control" id="premiumAmount" name="premiumAmount" [(ngModel)]="policylist.premiumAmount" [readonly]="true" style="font-size:large ; color:teal;font-weight:bolder">
+  </div>
 
+  <div class="mb-3">
+    <label for="duration" class="form-label" style="font-family:Georgia, 'Times New Roman', Times, serif ;font-weight:900;font-size:x-large">Duration(Years)</label>
+    <input type="text" class="form-control" id="duration" name="duration" [(ngModel)]="policylist.duration" [readonly]="true" style="font-size:large ; color:teal;font-weight:bolder">
+  </div>
+
+  <div class="mb-3">
+    <label for="coverAmount" class="form-label" style="font-family:Georgia, 'Times New Roman', Times, serif ;font-weight:900;font-size:x-large">CoverAmount(Years)</label>
+    <input type="text" class="form-control" id="coverAmount" name="coverAmount" [(ngModel)]="policylist.coverAmount" [readonly]="true" style="font-size:large ; color:teal;font-weight:bolder">
+  </div>
+
+
+
+  
+                
+  <button type="button" class="btn btn-primary m-2"><a [routerLink]="['/PolicyList','apply',policylist.id]"  style="color:white;text-decoration:none">Apply</a></button>
+          <!-- <button type="submit" class="btn btn-primary" >Apply</button> -->
+        </form>
+      </div>                                                                   
+     
+  </div>
