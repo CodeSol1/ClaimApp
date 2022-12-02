@@ -19,7 +19,7 @@ export class AddpolicyComponent implements OnInit {
     premiumAmount: 0,
     duration: 0,
     coverAmount: 0,
-    description: '',
+   
 
   };
   policy = new Policy();

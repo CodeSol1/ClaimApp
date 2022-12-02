@@ -54,9 +54,24 @@ export class AuthService {
     return localStorage.getItem("bearerToken")
   }
 
+  // removeBearerToken() {
+  //   // this method should clear the token stored in local storage
+  //   localStorage.removeItem("bearerToken")
+  // }
   removeBearerToken() {
     // this method should clear the token stored in local storage
-    localStorage.removeItem("bearerToken")
+    localStorage.clear()
+  }
+
+  getEmail() {
+    return localStorage.getItem("email")
+  }
+  
+  getrole() {
+    return localStorage.getItem("role")
+  }
+  getuserid() {
+    return localStorage.getItem("userid")
   }
 
 

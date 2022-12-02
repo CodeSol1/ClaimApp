@@ -13,6 +13,7 @@ import { CanactivateGuard } from './guard/canactivate.guard';
 import { AddpolicyComponent } from './admin/policy/addpolicy/addpolicy.component';
 import { ApplypolicyComponent } from './policy/applypolicy/applypolicy.component';
 import { EditpolicyComponent } from './admin/policy/editpolicy/editpolicy.component';
+import { AuthGuard } from './guard/auth.guard';
 // import { CanActivateGuard } from './gaurds/can-activate.guard';
 
 
@@ -21,15 +22,17 @@ import { EditpolicyComponent } from './admin/policy/editpolicy/editpolicy.compon
 
 const routes: Routes = [
   {
-    path: "admindashboard", component: AdminmainComponent, canActivate: [CanactivateGuard],
+    path: "admindashboard", component: AdminmainComponent, canActivate: [CanactivateGuard], data: [2],
     children: [
-      { path: "alluser", component: UserdetailsComponent, canActivate: [CanactivateGuard] },
+      
+      { path: "claim", component: ClaimComponent, canActivate: [CanactivateGuard], data: [2] },
 
-     
+      
     ]
   },
+  { path: "addpolicy", component: AddpolicyComponent},
   {path:"admin",component:AdminmainComponent},
-  { path: "addpolicy", component: AddpolicyComponent },
+  
   { path: "", component: MainComponent },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
@@ -37,7 +40,7 @@ const routes: Routes = [
   { path: "policylist", component: PloicylistComponent },
   { path: "profile", component: MyprofileComponent },
   { path:'PolicyList/details/:id',component:PolicydetailsComponent},
-  {path:'PolicyList/apply/:id',component:ApplypolicyComponent},
+  { path: 'PolicyList/apply/:id', component: ApplypolicyComponent, canActivate: [AuthGuard], data: [1] },
   {path:'PolicyList/edit/:id',
   component:EditpolicyComponent}
 

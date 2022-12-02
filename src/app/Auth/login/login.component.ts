@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     ])
 
   })
- loggeduser : string=''
+  loggeduser: string = ''
   isuservalid: boolean = false;
   LoginSubmitted(LoginForm: any) {
 
@@ -41,7 +41,12 @@ export class LoginComponent implements OnInit {
       .subscribe(obj => {
         console.log(obj)
         console.log(Object.values(obj)[0]);
-       
+
+        localStorage.setItem("role", Object.values(obj)[0]);
+        localStorage.setItem("email", Object.values(obj)[1]);
+        localStorage.setItem("userid", Object.values(obj)[2]);
+
+
         this.authService.setBearcerToken(Object.values(obj)[3]);
         // this.authService.checkRole(Object.values(obj)[0]);
         if (Object.values(obj)[0] == 2)

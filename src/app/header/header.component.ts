@@ -13,6 +13,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  loggeduser = this.http.isUserAuthenticated()
+  email = this.http.getEmail()
+  role = this.http.getrole()
+  
+
   logout() {
     this.http.removeBearerToken();
     this._router.navigate(['/login']);

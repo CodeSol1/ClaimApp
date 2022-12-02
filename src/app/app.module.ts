@@ -31,6 +31,7 @@ import { EditpolicyComponent } from './admin/policy/editpolicy/editpolicy.compon
 import { AdminmainComponent } from './admin/adminmain/adminmain.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { MypolicyComponent } from './mypolicy/mypolicy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { HeaderComponent } from './header/header.component';
      AdminmainComponent,
      FooterComponent,
      HeaderComponent,
-     ApplypolicyComponent
+     ApplypolicyComponent,
+     MypolicyComponent
 
 
   ],

@@ -21,3 +21,43 @@ a {
     /* background-color: rgb(11, 0, 45); */
     margin-right: 25px;
 }
+
+.navbar {
+    justify-content: space-between;
+
+
+}
+
+span {
+    padding-right: 1rem;
+
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+/*::ng-deep .customize {
+    background: black;
+  }*/
+.mat-menu-item {
+    color: blue !important;
+
+
+}
+
+a.mat-menu-item {
+    background-color: white;
+    margin-left: 5px;
+    margin-right: 10px;
+
+
+
+}
+
+a.mat-menu-item:hover {
+    background-color: blue;
+    color: #fff !important;
+}

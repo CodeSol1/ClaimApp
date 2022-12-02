@@ -19,7 +19,7 @@ export class PolicydetailsComponent implements OnInit {
     premiumAmount: 0,
     duration: 0,
     coverAmount: 0,
-    description: ''
+    
   };
 
   constructor(private route:ActivatedRoute,private policyservice:PolicyService,private router:Router){}
