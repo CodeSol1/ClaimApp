@@ -1,22 +1,26 @@
 export class PolicyHolder {
 
-    holderId: number;
+    // holderId: number;
     userId: number;
     applicantName: string;
     nominee: string;
     age: string;
     phoneNumber: string;
+    policyId: number;
+    policyName: string;
 
 
 
 
     constructor() {
-        this.holderId = 0,
-        this.userId = 0,
-        this.applicantName = '',
-        this.nominee = '',
-        this.age = '',
-        this.phoneNumber = ''
+        // this.holderId = 0,
+            this.userId = 0,
+            this.applicantName = '',
+            this.nominee = '',
+            this.age = '',
+            this.phoneNumber = '',
+            this.policyId = 0,
+            this.policyName = ''
 
     }
 }

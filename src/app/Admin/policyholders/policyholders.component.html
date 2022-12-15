@@ -1,0 +1,44 @@
+
+
+<div class="holderlist">
+
+
+<div class="container ">
+    <h2 class="head">Policy Holders</h2>
+    <hr>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>UserId </th>
+                <th>HolderId</th>
+                <th>policyId</th>
+                <th>PolicyName</th>
+                <th>Applicant Nmae</th>
+                <th>Nominee Nmae</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Membersince</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let holder of policyholder">
+                <td>{{holder.userID}}</td>
+                <td>{{holder.holderId}}</td>
+                <td>{{holder.policyId}}</td>
+                <td>{{holder.policyName}}</td>
+                
+                <td>{{holder.applicantName}}</td>
+                <td>{{holder.nominee}}</td>
+                <td>{{holder.age}}</td>
+                <td>{{holder.phoneNumber}}</td>
+                <td>{{holder.membersince}}</td>
+             
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+
+</div>

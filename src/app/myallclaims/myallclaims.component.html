@@ -1,0 +1,40 @@
+
+<div class="holderlist">
+
+
+    <div class="container ">
+        <h2 class="head">My All Claims</h2>
+        <hr>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>UserId </th>
+                    <th>claimId</th>
+                   
+                    <th>Amount</th>
+                    <th>Hospital</th>
+                    <th>status</th>
+                    
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let claim of claims">
+                    <td>{{claim.userId}}</td>
+                    <td>{{claim.claimId}}</td>
+                  
+                    <td>{{claim.amount}}</td>
+                    <td>{{claim.hospital}}</td>
+                    <td>{{claim.status}}</td>
+                    <td>
+                        
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+/

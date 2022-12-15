@@ -31,7 +31,8 @@ policydetails:Policy={
        if(id){
           this.policyservice.getPolicy(id).subscribe({
             next:(response) => {
-                 this.policydetails = response;
+              this.policydetails = response;
+            
             }
           })
        }
@@ -41,8 +42,9 @@ policydetails:Policy={
 
   updatePolicy(){
     this.policyservice.updatePolicy(this.policydetails.id,this.policydetails).subscribe({
-      next:()=>{
-           this.router.navigate(['admin']);
+      next: () => {
+        alert("policy edited successfully");
+           this.router.navigate(['admindashboard']);
       }
     })
 
@@ -50,8 +52,9 @@ policydetails:Policy={
 
   deletePolicy(id:number){
     this.policyservice.deletePolicy(id).subscribe({
-      next:(response)=>{
-        this.router.navigate(['admin']);
+      next: (response) => {
+        alert("policy deleted successfully");
+        this.router.navigate(['admindashboard']);
       }
     })
   }

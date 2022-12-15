@@ -49,12 +49,12 @@ footer {
 }
 
 .socials a i {
-    font-size: 1.1rem;
+    font-size: 2.1rem;
     transition: color 0.4s ease;
 }
 
 .socials a:hover i {
-    color: aqua;
+    color: rgb(229, 255, 0);
 }
 
 .footer-bottom {
@@ -77,3 +77,4 @@ footer {
 }
 
 /* footer end */
+

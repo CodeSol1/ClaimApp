@@ -1,1 +1,51 @@
-<p>mypolicy works!</p>
+
+
+<div class="container pollist">
+  <div class="row">
+    <ng-container *ngFor="let holder of holders">
+      <div class="col-lg-6">
+        <div class="card mt-2 shadow " style="width:550px ; background:linear-gradient(to left ,#cfada7,#4065a4);  ">
+             
+
+          <h3 style="text-align:center;color:lemonchiffon ;font-size: large;font-weight: bolder;"> PolicyName
+            :{{holder.policyName}}</h3>
+
+           <div class="row">
+            <div class="col-6" style="padding-left: 22px;">
+              <h4 style="font-weight: bolder;"> AplicantNane :{{holder.applicantName}} </h4>
+             
+             
+              <h4 style="font-weight: bolder;"> AgeLimit : {{holder.age}}</h4>
+            </div>
+            <div class="col-6">
+              <h4 style="font-weight: bolder;"> Nominee :{{holder.nominee}} </h4>
+              
+              <h4 style="font-weight: bolder;"> phoneNumber :{{holder.phoneNumber}} </h4>
+              
+            </div>
+            <h3 style="text-align:center;color:rgb(26, 28, 164) ;font-size: large;font-weight: bolder;">StartDate:
+              {{holder.membersince}}</h3>
+          
+          </div>
+
+                 
+
+          
+
+           <button type="button" class="btn btn-primary m-2"><a [routerLink]="['/mypolicy','claim']" 
+                            style="color:white;text-decoration:none">click to claim</a>
+                        </button>
+        </div>
+      </div>
+
+      <!-- background: linear-gradient(to left, #1e3c72, #2a5298);  -->
+
+    </ng-container>
+
+  </div>
+
+  <p *ngIf="!holders || holders.length <=0"> No Policies Added </p>
+</div>
+ 
+
+

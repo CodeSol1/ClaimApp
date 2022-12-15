@@ -4,13 +4,26 @@
 <footer>
 
     <div class="footer-content">
-        <h3>ClaimApp : The Online plateform where you buy life Secuirity</h3>
-        <p>Lorem ipsum hfkasjfdl dolor sit amet consectetur adipisicing elit. Officiis veniam praesentium nemo
-            ipsa
-            asperiores eum deserunt dolores, repudiandae cum assumenda.</p>
+        
+        <h3>ClaimApp : A Health insurence limited company</h3>
+        
+
+
+        <p>
+         <span style="font-size:20px; color:red">Address : </span>
+        2nd Floor, #36/5, Hustlehub One East, Somasandrapalya, 27th Main Rd, Sector 2, HSR Layout, Bengaluru, Karnataka 560102</p>
+
+       <ul>
+        <li><i class="fa-solid fa-envelope"></i> : admin@gmail.com</li>
+        <li><i class="fa-solid fa-phone"></i>  +919834567329</li>
+       </ul>
+          
+            <ng-container *ngIf="Role==2">
+            <button type="button" style="background: linear-gradient(to left, #35d3e5,#e35d5b);" class="m-2"><a
+                    routerLink="admindashboard" style="color:white;text-decoration:none">GO TO ADMIN DASHBOARD</a></button>
+    </ng-container>
         <ul class="socials">
-            <li><a href="https://www.facebook.com/rituraj.chaurasia.50" target="_blank"><i
-                        class="fa fa-facebook"></i></a>
+            <li><a href="https://www.facebook.com/rituraj.chaurasia.50" target="_blank"><i class="fa-brands fa-facebook"></i></a>
             </li>
 
             <li><a href="https://www.instagram.com/rituraj_6171" target="_blank"><i class="fa fa-instagram"></i></a>

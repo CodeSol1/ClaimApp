@@ -9,26 +9,39 @@ export class CanactivateGuard implements CanActivate {
   /**
    *
    */
+  
   constructor(private _authservice: AuthService, private _router: Router) { }
 
-  user = {
-    role: 2
-  }
+  
   
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     console.log("inside gaurd");
+   
 
-    
-    if (this._authservice.isUserAuthenticated() == true && route.data[0] == this.user.role)
+    let role = this._authservice.getrole();
+    let Role= Number(role);
+
+
+    if (this._authservice.isUserAuthenticated() == true && Role==2)
       return true;
     else {
-      alert("you are not logged in")
-      this._router.navigate(["login"]);
+    
+      alert("you are not an admin")
+      this._router.navigate([""]);
       return false;
     }
+    // return false;
+
+    // route.data[0] == this.user.role
+      //  && 
+     
+      // alert("you are not an admin")
+    //   this._router.navigate(["login"]);
+      
+    // }
   }
 
 }

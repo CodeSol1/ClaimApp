@@ -3,6 +3,9 @@
     background-color: rgb(80, 203, 199);
     position: relative;
     background-image: url(/assets/images/img5.webp);
+    background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 }
 
 .login1 {

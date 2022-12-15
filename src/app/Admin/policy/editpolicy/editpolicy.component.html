@@ -1,55 +1,66 @@
+<div class="editpol">
 
-<div class="container my-5">
-    <h1 class="mb-3">EDIT POLICy</h1>
+
+  <div class="container1">
+    <div class="head">
+          <h1 class="head2">EDIT POLICY</h1>
+    </div>
+    
     <div class="row">
-      <div class="col-6">
+      <div class="col-12">
         <form #form="ngForm" (ngSubmit)="updatePolicy()">
-          <!-- <div class="mb-3">
-                  <label for="policyName" class="form-label">id</label>
-                  <input type="number" class="form-control" id="policyName" name="id" [(ngModel)]="policydetails.id">
-                </div> -->
-  
-          <div class="mb-3">
-            <label for="policyName" class="form-label">Policy Name</label>
-            <input type="text" class="form-control" id="policyName" name="policyName"
-              [(ngModel)]="policydetails.policyName" >
+
+          <div class="row edilpol2">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="policyName" class="form-label">Policy Name</label>
+                <input type="text" class="form-control" id="policyName" name="policyName"
+                  [(ngModel)]="policydetails.policyName">
+              </div>
+
+              <div class="mb-3">
+                <label for="insuranceTye" class="form-label">InsuranceType</label>
+                <input type="text" class="form-control" id="insuranceTye" name="insuranceTye"
+                  [(ngModel)]="policydetails.insuranceTye">
+              </div>
+              <div class="mb-3">
+                <label for="maximumAmount" class="form-label">Duration</label>
+                <input type="number" class="form-control" id="maximumAmount" name="maximumAmount"
+                  [(ngModel)]="policydetails.duration">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="ageLimit" class="form-label">AgeLimit</label>
+                <input type="text" class="form-control" id="ageLimit" name="ageLimit"
+                  [(ngModel)]="policydetails.ageLimit">
+              </div>
+
+              <div class="mb-3">
+                <label for="premiumAmount" class="form-label">Premium Amount</label>
+                <input type="number" class="form-control" id="premiumAmount" name="premiumAmount"
+                  [(ngModel)]="policydetails.premiumAmount">
+              </div>
+              <div class="mb-3">
+                <label for="minDuration" class="form-label">Cover Amount</label>
+                <input type="number" class="form-control" id="minDuration" name="minDuration" [(ngModel)]="policydetails.coverAmount">
+              </div>
+            </div>
+
+
           </div>
-  
-          <div class="mb-3">
-            <label for="insuranceTye" class="form-label">InsuranceType</label>
-            <input type="text" class="form-control" id="insuranceTye" name="insuranceTye"
-              [(ngModel)]="policydetails.insuranceTye">
-          </div>
-  
-          <div class="mb-3">
-            <label for="ageLimit" class="form-label">AgeLimit</label>
-            <input type="text" class="form-control" id="ageLimit" name="ageLimit" [(ngModel)]="policydetails.ageLimit">
-          </div>
-            
-          <div class="mb-3">
-            <label for="premiumAmount" class="form-label">Premium Amount</label>
-            <input type="number" class="form-control" id="premiumAmount" name="premiumAmount" [(ngModel)]="policydetails.premiumAmount">
-          </div>
-  
-          <div class="mb-3">
-            <label for="maximumAmount" class="form-label">Duration</label>
-            <input type="number" class="form-control" id="maximumAmount" name="maximumAmount" [(ngModel)]="policydetails.duration">
-          </div>
-  
-          <div class="mb-3">
-            <label for="minDuration" class="form-label">Cover Amount</label>
-            <input type="number" class="form-control" id="minDuration" name="minDuration" [(ngModel)]="policydetails.coverAmount">
-          </div>
-  
-        
-  
-         
-                
-  
+
+
+
+
+
           <button type="submit" class="btn btn-primary">Save Policy</button>
-          <button type="button" class="btn btn-danger m-4" (click)="deletePolicy(policydetails.id)">Delete Policy</button>
+          <button type="button" class="btn btn-danger m-4" (click)="deletePolicy(policydetails.id)">Delete
+            Policy</button>
         </form>
       </div>
     </div>
-  
+
   </div>
+
+</div>

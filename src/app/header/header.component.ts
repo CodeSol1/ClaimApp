@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   loggeduser = this.http.isUserAuthenticated()
   email = this.http.getEmail()
   role = this.http.getrole()
+  Role= Number(this.role)
   
 
   logout() {

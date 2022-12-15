@@ -1,38 +1,37 @@
 
+
 <mat-toolbar color="primary" class="navbar">
-    <div><a routerLink="">ClaimApp</a></div>
+    <div><a routerLink="">ClaimApp
+
+    </a></div>
 
 
     <ng-container *ngIf="email">
         <h3>Hello - {{email}}</h3>
-     
+
     </ng-container>
-
-    
-
-
 
     <div>
 
-   
+        
 
         <span>
             <a routerLink="policylist">Policy</a>
         </span>
-        
+
         <ng-container *ngIf="!loggeduser">
-        
+
             <span>
                 <a routerLink="register">Register</a>
             </span>
-        
+
             <span>
                 <a routerLink="login"> login</a>
             </span>
         </ng-container>
-        
+
         <ng-container *ngIf="loggeduser">
-        
+
             <button type="button" class="btn text-light btn-outline-primary logbott" (click)="logout()">Logout</button>
         </ng-container>
 
@@ -42,25 +41,47 @@
                 <a routerLink=> <img src="/assets/images/profile.png" height="40px" width="40px" alt=""
                         [matMenuTriggerFor]="menu">
                     <!--<mat-icon>arrow_down</mat-icon>-->
-        
+
                     <mat-menu #menu="matMenu">
-        
-                        <a routerLink="policylist" mat-menu-item class="customize">My Policy</a>
-                        <a routerLink="" mat-menu-item class="customize">My claim</a>
-        
-        
-        
+
+                        <ng-container *ngIf="Role==2">
+                           
+                                <a routerLink="admindashboard" mat-menu-item class="customize">Edit/Delete policy</a>
+                            
+                           
+                                <a routerLink="addpolicy" mat-menu-item class="customize">Add Policy</a>
+                          
+                            
+                                <a routerLink="policyholder" mat-menu-item class="customize">Policy Holder</a>
+
+                                <a routerLink="userclaims" mat-menu-item class="customize">User claims</a>
+
+                                <a routerLink="userdetails" mat-menu-item class="customize">All Users</a>
+                           
+                        </ng-container>
+
+                        <a routerLink="mypolicy" mat-menu-item class="customize">My Policy</a>
+
+                        <a routerLink="myallclaim" mat-menu-item class="customize">My claim</a>
+
+
+
                     </mat-menu>
-        
+
                 </a>
             </span>
-        
+
         </ng-container>
 
 
     </div>
 
 </mat-toolbar>
+
+
+
 <router-outlet></router-outlet>
+
+
 
 <app-footer></app-footer>

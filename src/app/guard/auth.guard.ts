@@ -9,21 +9,25 @@ import { AuthService } from '../Service/auth.service';
 export class AuthGuard implements CanActivate {
 
   constructor(private _authservice: AuthService, private _router: Router) { }
-  user = {
-    role: 1
-  }
+  
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-    if (this._authservice.isUserAuthenticated() == true && route.data[0] == this.user.role)
+    let role = this._authservice.getrole();
+    let Role = Number(role);
+    let role2 = this._authservice.getrole();
+    let Role2 = Number(role2);
+
+
+    if (this._authservice.isUserAuthenticated() == true && (Role == 1 || Role2 == 2))
       return true;
     else {
-      alert("you are not logged in")
-      this._router.navigate(["login"]);
+
+      alert("you are not logged in !")
+      this._router.navigate([""]);
       return false;
     }
-    return true;
   }
   
 }

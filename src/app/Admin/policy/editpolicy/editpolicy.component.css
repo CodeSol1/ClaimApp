@@ -1,0 +1,29 @@
+.editpol{
+    background-color: rgb(168, 41, 41);
+    position: relative;
+    min-height:500px;
+    background-image: url(/assets/images/img3.webp);
+}
+
+.container1{
+    background-color: rgb(201, 200, 221);
+    width:60%;
+    position: absolute;
+    left:19rem;
+    top:2rem;
+
+}
+
+.edilpol2{
+    margin: 3px 3px;
+}
+
+.head{
+    height:50px;
+    background-color: #fff;
+}
+
+.head2{
+    text-align: center;
+  
+}

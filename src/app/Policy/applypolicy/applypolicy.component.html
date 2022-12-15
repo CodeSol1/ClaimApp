@@ -1,38 +1,46 @@
+<div class="editpol">
 
-        <div class="container my-5" >
-            <h1 class="mb-3">APPLY POLICY HERE</h1>
-          <div class="row">
-            <div class="col-6">
-                <form #form="ngForm" (ngSubmit)="addPolicyHolder(form.value)">
-         
-                  <div class="mb-3">
-                    <label for="applicantName" class="form-label">Applicant Name</label>
-                    <input type="text" class="form-control" id="applicantName" name="applicantName" [(ngModel)]="addPolicyHolderRequest.applicantName">
-                  </div> 
-  
-  
-                  <div class="mb-3">
-                    <label for="nominee" class="form-label">Nominee</label>
-                    <input type="text" class="form-control" id="nominee" name="nominee" [(ngModel)]="addPolicyHolderRequest.nominee">
-                  </div> 
-               
-          
-                  <div class="mb-3">
-                    <label for="age" class="form-label">Age</label>
-                    <input type="text" class="form-control" id="age" name="nominee" [(ngModel)]="addPolicyHolderRequest.age">
-                  </div>
-  
-                  <div class="mb-3">
-                    <label for="phoneNumber" class="form-label">PhoneNumber</label>
-                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" [(ngModel)]="addPolicyHolderRequest.phoneNumber">
-                  </div>
-                
-              
-  
-                    <button type="submit" class="btn btn-primary">Confirm Application</button>
-                  </form>
-            </div>
+
+  <div class="container1">
+    <div class="head">
+            <h1>Fill Details for Apply</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <form #form="ngForm" (ngSubmit)="addPolicyHolder(form.value)">
+    
+          <div class="mb-3 apply">
+            <label for="applicantName" class="form-label">Applicant Name</label>
+            <input type="text" class="form-control" id="applicantName" name="applicantName"
+              [(ngModel)]="addPolicyHolderRequest.applicantName">
           </div>
-        
-        </div>
-        
+    
+    
+          <div class="mb-3 apply">
+            <label for="nominee" class="form-label">Nominee</label>
+            <input type="text" class="form-control" id="nominee" name="nominee"
+              [(ngModel)]="addPolicyHolderRequest.nominee">
+          </div>
+    
+    
+          <div class="mb-3 apply">
+            <label for="age" class="form-label">Age</label>
+            <input type="text" class="form-control" id="age" name="nominee" [(ngModel)]="addPolicyHolderRequest.age">
+          </div>
+    
+          <div class="mb-3 apply">
+            <label for="phoneNumber" class="form-label">PhoneNumber</label>
+            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
+              [(ngModel)]="addPolicyHolderRequest.phoneNumber">
+          </div>
+    
+    
+    
+          <button type="submit" class="btn btn-primary butt">Confirm Application</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

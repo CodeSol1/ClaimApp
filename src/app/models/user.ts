@@ -11,8 +11,8 @@ export class User {
 
         this.UserId = 0;
         this.Email = "";
-        this.Password ="";
-        this.RePassword ="";
+        this.Password = "";
+        this.RePassword = "";
 
         this.Role = 1;
     }
@@ -44,7 +44,7 @@ export class Policy {
     premiumAmount: number;
     duration: number;
     coverAmount: number;
-    // description: string;
+
 
     /**
      *
@@ -57,7 +57,7 @@ export class Policy {
         this.premiumAmount = 0;
         this.duration = 0;
         this.coverAmount = 0;
-        // this.description = '';
+
     }
 }
 
@@ -68,6 +68,7 @@ export class Claim {
     Amount: Number;
     Hospital: string;
     Description: string;
+    status: string;
 
 
     constructor() {
@@ -78,6 +79,7 @@ export class Claim {
         this.Amount = 0;
         this.Hospital = "";
         this.Description = "";
+        this.status = ""
 
     }
 }

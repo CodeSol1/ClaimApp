@@ -1,0 +1,62 @@
+<div class="holderlist">
+
+
+    <div class="container ">
+        <h2 class="head">Policy Holders</h2>
+        <hr>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>UserId </th>
+                    <th>claimId</th>
+                    
+                    <th>Amount</th>
+                    <th>Hospital</th>
+                    <th>Status</th>
+                   
+                         <th>Change status</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let claim of claims">
+                    <td>{{claim.userId}}</td>
+                    <td>{{claim.claimId}}</td>
+                    
+                    <td>{{claim.amount}}</td>
+                    <td>{{claim.hospital}}</td>
+                    <td>{{claim.status}}</td>
+                    <td>
+                        <form [formGroup]="statusform">
+                            <div>
+                                
+
+                                <select class="form-select" aria-label="Default select example"
+                                    formControlName="status">
+                                    <!-- <option selected>Category</option> -->
+
+                                    <option value="under process">under process</option>
+                                    <option value="confirm">confirm</option>
+                                    
+                                    <option value="reject">Reject</option>
+
+                                </select>
+
+                                <input type="number"placeholder="enter claimid" formControlName="claimid">
+
+                                <button type="button" class="btn btn-primary" (click)="status()">Change</button>
+                            </div>
+
+                        </form>
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Claim } from '../models/user';
 import { AuthService } from '../Service/auth.service';
 
@@ -10,7 +11,7 @@ import { AuthService } from '../Service/auth.service';
 })
 export class ClaimComponent implements OnInit {
 
-  constructor(private authsrvice: AuthService) { }
+  constructor(private authsrvice: AuthService, private _router: Router) { }
 
 
   ngOnInit(): void {
@@ -27,10 +28,12 @@ export class ClaimComponent implements OnInit {
 
   })
 
+  
+  userId = this.authsrvice.getuserid();
 
 
   ClaimSubmitted(ClaimForm: any) {
-
+let uid= Number(this.userId)
     console.log(this.ClaimForm.value)
 
     let claim = new Claim();
@@ -38,11 +41,17 @@ export class ClaimComponent implements OnInit {
     claim.Amount = ClaimForm.controls.Amount.value;
     claim.Hospital = ClaimForm.controls.Hospital.value;
     claim.Description = ClaimForm.controls.Description.value;
-    
+    claim.UserId = uid;
     
     this.authsrvice.CreateClaim(claim).subscribe(res => {
       console.log(res)
+      alert("policy cliamed")
+      this._router.navigate([""]);
+
+
     },
+      
+      
       error => {
         console.log(error);
         console.log(error.status);

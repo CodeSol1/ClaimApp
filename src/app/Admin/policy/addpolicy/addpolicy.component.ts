@@ -31,8 +31,8 @@ export class AddpolicyComponent implements OnInit {
     this.policyservice.addPolicy(this.addPolicyRequest).subscribe({
            
       next: (form) => {
-        // alert("Policy Added")
-        this.router.navigate(['admin'])
+         alert("Policy Added successfully")
+        this.router.navigate(['admindashboard'])
       }
     })
 

@@ -19,7 +19,7 @@ export class AuthService {
   url1 = "https://localhost:44306/api/user/CreateUser";
 
   url2 = "https://localhost:44306/api/user/LoginUser";
-  url3 = "https://localhost:44398/api/claim/AddClaim";
+  url3 = "https://localhost:44311/api/claim/AddClaim";
 
 
 
@@ -38,6 +38,7 @@ export class AuthService {
     return this._http.post(this.url2, login)
   }
 
+  
   CreateClaim(claim: Claim) {
 
     return this._http.post(this.url3, claim)
